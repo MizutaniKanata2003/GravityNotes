@@ -552,7 +552,7 @@ void CreateVertexShader(ID3D11VertexShader** VertexShader, ID3D11InputLayout** V
 	FILE* file;
 	long int fsize;
 
-	file = fopen(FileName, "rb");
+	fopen_s(&file, FileName, "rb");
 	if (file == NULL)
 	{
 		MessageBoxA(NULL, FileName, "Shader File Not Found (VS)", MB_OK);
@@ -592,7 +592,7 @@ void CreatePixelShader(ID3D11PixelShader** PixelShader, const char* FileName)
 	FILE* file;
 	long int fsize;
 
-	file = fopen(FileName, "rb");
+	fopen_s(&file, FileName, "rb");
 	if (file == NULL)
 	{
 		MessageBoxA(NULL, FileName, "Shader File Not Found (PS)", MB_OK);
